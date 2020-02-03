@@ -1,10 +1,5 @@
 import asyncio
-import time
 
-JOB_CREATED = "created"
-JOB_RUNNING = "running"
-JOB_SUCCESS = "success"
-JOB_FAILED = "failed"
 
 class Job:
     def __init__(self, cmd, max_reruns=None):
