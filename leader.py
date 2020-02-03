@@ -62,7 +62,6 @@ class Leader:
 
 
 def did_job_work(job):
-    print("hello?")
     if not job.result.stderr and not job.result.return_code:
         job.result.successful = True
         job.result.rerun = False
@@ -73,7 +72,7 @@ def main():
             WorkerNode("mhowland@unix1.csc.calpoly.edu", 2),
             WorkerNode("mhowland@unix3.csc.calpoly.edu", 2)
         ]
-    job_cmds = ['ls' for i in range(2)]
+    job_cmds = ['ls' for i in range(100)]
 
     loop = asyncio.get_event_loop()
     leader = Leader(loop, worker_nodes, job_cmds, did_job_work) 
